@@ -1,6 +1,4 @@
-﻿using System;
-using System.Reflection;
-using System.Windows;
+﻿using System.Windows;
 
 namespace WeekOfYear
 {
@@ -9,18 +7,5 @@ namespace WeekOfYear
     /// </summary>
     public partial class App : Application
     {
-        private App()
-        {
-            try
-            {
-                var key =
-                Microsoft.Win32.Registry.CurrentUser.OpenSubKey(
-                    "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-                var curAssembly = Assembly.GetExecutingAssembly();
-                
-                key?.SetValue(curAssembly.GetName().Name, curAssembly.Location);
-            }
-            catch (Exception) { /* bla */ }
-        }
     }
 }
